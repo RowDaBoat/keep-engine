@@ -8,7 +8,7 @@ repositories {
     mavenCentral()
 }
 
-group = "tech.alephia"
+group = "com.github.RowDaBoat"
 version = "1.0"
 
 dependencies {

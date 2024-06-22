@@ -11,8 +11,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "kobold-keep"
+rootProject.name = "keep-engine"
 
-include("keep-engine")
-include("kobold-keep")
-include("kobold-keep-game")
+include("samples")
