@@ -5,6 +5,7 @@
 **Keep Engine** is a game engine for text based adventure games written in Kotlin. It features an easy to read and write domain specific language to design scenes, items, characters, actions, and state machines.
 
 ## Setup
+
 Add the JitPack to your repositories and `keep-keep` to your dependencies on your project's `build.gradle.kts`.
 
 ```kotlin
@@ -117,8 +118,8 @@ val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
 
 The **Keep Engine** can do much more things to help you design your text-based game, such as:
 
-- [Characters with state]()
-- [Items with state]()
-- [Dialogue Trees]()
-- [Custom Actions]()
-- [Actions and Events]()
+- [Characters with state](doc/characters.md)
+- [Items with state](doc/items.md)
+- [Dialogue Trees](doc/dialogues.md)
+- [Custom Actions](doc/actions.md)
+- [Actions and Events](doc/events.md)
