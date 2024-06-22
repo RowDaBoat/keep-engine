@@ -9,13 +9,13 @@ import kotlin.reflect.KType
 fun main() {
     val inOut = InOut()
     val mainCharacter = mainCharacter("player", "you")
-    val welcome = Scene(
+    val scene = Scene(
         "hello-keep",
         "Hello Keep",
-        "Keep is a text-based game engine for adventure games.",
+        "Keep is a text game engine.",
         emptyList()
     )
-    val scenes = listOf(welcome)
+    val scenes = listOf(scene)
     val game = Game(inOut, mainCharacter, scenes, "hello-keep")
 
     game.start()

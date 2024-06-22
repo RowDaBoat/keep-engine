@@ -18,7 +18,8 @@ class SimpleCharacter(
     private var state : CharacterState = statesByKey[initialState]!!
 
     override fun setup(game: Game) {
-        this.game = game;
+        this.game = game
+        inventory.setup(game)
         statesByKey.values.forEach { it.setup(this) }
     }
 

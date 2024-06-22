@@ -36,7 +36,7 @@ private fun mainCharacterInventory() =
         listOf(),
         "You have",
         "You have",
-        "The inventory is empty."
+        "Your inventory is empty."
     )
 
 private fun singleState(name: String, description: String) =
