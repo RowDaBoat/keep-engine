@@ -8,9 +8,9 @@ fun item(
     description: String,
     indefiniteArticle: IndefiniteArticle = IndefiniteArticle.A,
     canBeTaken: Boolean = false
-) = SomeItem(key, name, description, indefiniteArticle, canBeTaken, Subscriptions(defaultItemSubscriptions()))
+): Item = SomeItem(key, name, description, indefiniteArticle, canBeTaken, Subscriptions(defaultItemSubscriptions()))
 
-fun item(key: String, initialState: String, vararg states: ItemState) =
+fun item(key: String, initialState: String, vararg states: ItemState): Item =
     StatefulItem(key, initialState, states.toList())
 
 fun itemState(

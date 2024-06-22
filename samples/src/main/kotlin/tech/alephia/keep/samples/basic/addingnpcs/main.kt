@@ -1,4 +1,4 @@
-package tech.alephia.keep.samples.addingnpcs
+package tech.alephia.keep.samples.basic.addingnpcs
 
 import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.actions.Talk

@@ -1,4 +1,4 @@
-package tech.alephia.keep.samples.addingitems
+package tech.alephia.keep.samples.basic.addingitems
 
 import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.actions.Leave

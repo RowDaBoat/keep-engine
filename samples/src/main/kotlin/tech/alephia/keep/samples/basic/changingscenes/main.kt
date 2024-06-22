@@ -1,4 +1,4 @@
-package tech.alephia.keep.samples.changingscenes
+package tech.alephia.keep.samples.basic.changingscenes
 
 import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.actions.Goto

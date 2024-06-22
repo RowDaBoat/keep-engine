@@ -18,7 +18,7 @@ dependencies {
 }
 ```
 
-## A simple game
+## Getting started with a simple game
 
 To create a simple `Game` you need: an `InOut` object for input and output, a `Character` object for your main character, and a `Scene` for your initial scene.
 
@@ -118,8 +118,8 @@ val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
 
 The **Keep Engine** can do much more things to help you design your text-based game, such as:
 
-- [Characters with state](doc/characters.md)
 - [Items with state](doc/items.md)
+- [Characters with state](doc/characters.md)
 - [Dialogue Trees](doc/dialogues.md)
 - [Custom Actions](doc/actions.md)
 - [Actions and Events](doc/events.md)
