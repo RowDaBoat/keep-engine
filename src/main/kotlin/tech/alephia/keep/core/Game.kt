@@ -1,12 +1,12 @@
 package tech.alephia.keep.core
 
-import tech.alephia.keep.core.entities.characters.MainCharacter
+import tech.alephia.keep.core.entities.characters.Character
 import tech.alephia.keep.core.scenes.Scene
 import tech.alephia.keep.delivery.InOut
 
 class Game(
     val io: InOut,
-    val mainCharacter: MainCharacter,
+    val mainCharacter: Character,
     scenes: List<Scene>,
     startingScene: String
 ) {

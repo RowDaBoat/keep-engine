@@ -5,7 +5,8 @@ import tech.alephia.keep.core.actions.Action
 import tech.alephia.keep.delivery.InOut
 
 class ActionStorage(
-    actions: List<Action> = listOf()
+    actions: List<Action> = listOf(),
+    private val emptyDescription: String = "There is nothing to do."
 ) {
     private val indexedActions = actions.toMutableList()
     private val actionsByKey = actions.associateBy { it.key }.toMutableMap()
@@ -33,8 +34,13 @@ class ActionStorage(
     fun count() = indexedActions.count()
 
     fun show() {
-        indexedActions.withIndex().forEach {
-            io.item(it.index + 1, it.value.description)
+        when {
+            indexedActions.isEmpty() -> io.paragraph(emptyDescription)
+            else -> {
+                indexedActions.withIndex().forEach {
+                    io.item(it.index + 1, it.value.description)
+                }
+            }
         }
     }
 

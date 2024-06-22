@@ -5,5 +5,6 @@ import tech.alephia.keep.core.storages.ItemStorage
 
 interface Character: Entity {
     val inventory: ItemStorage
+
     fun change(toState: String)
 }

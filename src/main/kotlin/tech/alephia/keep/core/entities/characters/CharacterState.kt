@@ -7,7 +7,7 @@ import tech.alephia.keep.core.events.Subscriptions
 class CharacterState(
     val key: String,
     val name: String,
-    val description: String,
+    val description: String = "",
     private val subscriber: Subscriptions<Character>
 ): Subscribable<Character> by subscriber {
     private lateinit var character: Character

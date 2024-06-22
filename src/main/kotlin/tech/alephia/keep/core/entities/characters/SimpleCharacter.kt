@@ -6,7 +6,7 @@ import tech.alephia.keep.core.events.Subscribable
 import tech.alephia.keep.core.events.Subscriptions
 import tech.alephia.keep.core.storages.ItemStorage
 
-class StatefulNPC(
+class SimpleCharacter(
     override val key: String,
     override val inventory: ItemStorage,
     initialState: String,
@@ -31,9 +31,9 @@ class StatefulNPC(
     override fun showAsIndefinite() = name
 
     override fun change(toState: String) {
-        dispatch("on-enter")
-        state = statesByKey[toState]!!
         dispatch("on-exit")
+        state = statesByKey[toState]!!
+        dispatch("on-enter")
     }
 
     override fun publish(key: String, context: OpenContext) {
