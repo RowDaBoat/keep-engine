@@ -22,7 +22,7 @@ val potion =
 
 Items can hold state, allowing the world to react and be modified by the player's actions. Use an overload of the `item` function, and declare `key`, `initialState` and `states` parameters.
 
-Each state has its own `key`, also the state have `name` and `description` properties that replace the item ones.  Each state can have its own subscriptions to `onUse` and other actions, allowing the item to change its behavior.
+Each state has its own `key`, also the state has `name` and `description` properties that replace the item's ones.  Each state can have its own subscriptions to `onUse` or any other actions, allowing the item to change its behavior.
 
 The following example shows a switch that can be turned on or off by the player.
 

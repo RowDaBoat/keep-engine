@@ -33,7 +33,7 @@ Then create a main character, it requires a key (`"player"`) to identify it, and
 val mainCharacter = mainCharacter("player", "you")
 ```
 
-Then create a scene, it requires a key (`"hello-keep""`) to identify it, and a title name to display (`"Hello Keep""`), scenes usually also have a `narration` as third argument to provide context to the player. The last argument is very important, but we won't use it for now so we just use an empty action list using `actions()`.
+Then create a scene, it requires a key (`"hello-keep"`) to identify it, and a title name to display (`"Hello Keep""`), scenes usually also have a `narration` as third argument to provide context to the player. The last argument is very important, but we won't use it for now so we just use an empty action list using `actions()`.
 
 ```kotlin
 val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.", actions())

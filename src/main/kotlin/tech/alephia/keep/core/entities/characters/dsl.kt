@@ -1,5 +1,8 @@
 package tech.alephia.keep.core.entities.characters
 
+import tech.alephia.keep.core.entities.items.IndefiniteArticle
+import tech.alephia.keep.core.entities.items.ItemState
+import tech.alephia.keep.core.entities.items.defaultItemSubscriptions
 import tech.alephia.keep.core.events.Subscriptions
 import tech.alephia.keep.core.storages.ItemStorage
 
@@ -10,26 +13,46 @@ fun mainCharacter(
     inventory: ItemStorage = mainCharacterInventory()
 ) =
     singleState(name, description)
-        .let { mainCharacter(key, inventory, it.key, it) }
+        .let { mainCharacter(key, it.key, inventory, it) }
 
 fun mainCharacter(
     key: String,
-    inventory: ItemStorage = mainCharacterInventory(),
     initialState: String,
+    inventory: ItemStorage = mainCharacterInventory(),
     vararg states: CharacterState
 ): Character =
     SimpleCharacter(key, inventory, initialState, states.toList(), Subscriptions())
-
-fun npc(key: String, name: String, description: String = "", inventory: ItemStorage = ItemStorage()) =
-    singleState(name, description).let { npc(key, inventory, it.key, it) }
 
 fun npc(
     key: String,
-    inventory: ItemStorage = ItemStorage(),
+    name: String,
+    description: String = "",
+    inventory: ItemStorage = ItemStorage()
+) =
+    singleState(name, description)
+        .let { npc(key, it.key, inventory, it) }
+
+
+fun npc(
+    key: String,
     initialState: String,
     vararg states: CharacterState
 ): Character =
+    SimpleCharacter(key, ItemStorage(), initialState, states.toList(), Subscriptions())
+
+fun npc(
+    key: String,
+    initialState: String,
+    inventory: ItemStorage = ItemStorage(),
+    vararg states: CharacterState
+): Character =
     SimpleCharacter(key, inventory, initialState, states.toList(), Subscriptions())
+
+fun characterState(
+    key: String,
+    name: String,
+    description: String = "",
+) = CharacterState(key, name, description, Subscriptions())
 
 private fun mainCharacterInventory() =
     ItemStorage(
@@ -40,4 +63,4 @@ private fun mainCharacterInventory() =
     )
 
 private fun singleState(name: String, description: String) =
-    CharacterState("single-state", name, description, Subscriptions())
+    characterState("single-state", name, description)
