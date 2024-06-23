@@ -51,7 +51,7 @@ val mainCharacter = mainCharacter("player", "you")
 Then create a scene, it requires a key (`"hello-keep"`) to identify it, and a title name to display (`"Hello Keep"`), scenes usually also have a `narration` as third argument to provide context to the player. The last argument is very important, but we won't use it for now so we just use an empty action list using `actions()`.
 
 ```kotlin
-val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.", actions())
+val scene = scene("hello-keep", "Hello Keep", "Keep is a text game engine.", actions())
 ```
 
 Then create a game using the previously declared objects. The last argument is the `key` of the initial scene.
@@ -78,10 +78,10 @@ Let's add a new `Scene` and actions to go back and forth between the two.
 ```kotlin
 
 val welcomeActions = actions(Goto("big-room", "Go to the big room."))
-val welcome = Scene("hello-keep", "Hello Keep", "Keep is a text-based game.", welcomeActions)
+val welcome = scene("hello-keep", "Hello Keep", "Keep is a text-based game.", welcomeActions)
 
 val roomActions = actions(Goto("hello-keep", "Go back."))
-val room = Scene("big-room", "Big Room", "You are on a big room.", roomActions)
+val room = scene("big-room", "Big Room", "You are on a big room.", roomActions)
 
 val scenes = listOf(welcome, room)
 val game = Game(inOut, mainCharacter, scenes, "hello-keep")
@@ -98,7 +98,7 @@ val items = items(
 )
 
 val actions = actions(Take(), Leave())
-val room = Scene("big-room", "Big Room", "You are on a big room.", actions, items)
+val room = scene("big-room", "Big Room", "You are on a big room.", actions, items)
 ```
 
 ## Adding NPCs
@@ -124,11 +124,11 @@ val characters = characters(
         }
     )
 
-val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
+val scene = scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
     actions, characters = characters
 )
 ```
 
 ## Where to go from here
 
-The **Keep Engine** can do much more to help you design your text-based game, check the [index](#index) for more in depth documentation on items, characters, dialogue, actions, and events.
+**Keep** can do much more to help you design your text-based game, check the [index](#index) for in depth documentation on items, characters, dialogue, actions, and events.

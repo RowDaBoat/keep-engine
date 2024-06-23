@@ -5,6 +5,7 @@ import tech.alephia.keep.core.entities.items.ItemState
 import tech.alephia.keep.core.entities.items.defaultItemSubscriptions
 import tech.alephia.keep.core.events.Subscriptions
 import tech.alephia.keep.core.storages.ItemStorage
+import tech.alephia.keep.core.storages.items
 
 fun mainCharacter(
     key: String,
@@ -27,7 +28,7 @@ fun npc(
     key: String,
     name: String,
     description: String = "",
-    inventory: ItemStorage = ItemStorage()
+    inventory: ItemStorage = items()
 ) =
     singleState(name, description)
         .let { npc(key, it.key, inventory, it) }
@@ -38,12 +39,12 @@ fun npc(
     initialState: String,
     vararg states: CharacterState
 ): Character =
-    SimpleCharacter(key, ItemStorage(), initialState, states.toList(), Subscriptions())
+    SimpleCharacter(key, items(), initialState, states.toList(), Subscriptions())
 
 fun npc(
     key: String,
     initialState: String,
-    inventory: ItemStorage = ItemStorage(),
+    inventory: ItemStorage = items(),
     vararg states: CharacterState
 ): Character =
     SimpleCharacter(key, inventory, initialState, states.toList(), Subscriptions())

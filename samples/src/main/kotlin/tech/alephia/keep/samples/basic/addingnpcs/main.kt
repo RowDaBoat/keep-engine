@@ -6,10 +6,10 @@ import tech.alephia.keep.core.entities.characters.mainCharacter
 import tech.alephia.keep.core.entities.characters.npc
 import tech.alephia.keep.core.events.onTalk
 import tech.alephia.keep.core.scenes.Scene
-import tech.alephia.keep.core.scenes.actions
-import tech.alephia.keep.core.scenes.characters
+import tech.alephia.keep.core.scenes.scene
+import tech.alephia.keep.core.storages.actions
+import tech.alephia.keep.core.storages.characters
 import tech.alephia.keep.delivery.InOut
-import kotlin.reflect.KType
 
 fun main() {
     val inOut = InOut()
@@ -30,7 +30,7 @@ fun main() {
             }
     )
 
-    val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
+    val scene = scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
         actions,
         characters = characters
     )

@@ -1,13 +1,14 @@
 package tech.alephia.keep.core.storages
 
 import tech.alephia.keep.core.Game
+import tech.alephia.keep.core.actions.Action
 import tech.alephia.keep.core.entities.characters.Character
 
 class CharacterStorage(
     characters: List<Character> = listOf(),
-    private val singularEnumerationPostfix: String = "is here",
-    private val pluralEnumerationPostfix: String = "are here",
-    private val emptyDescription: String = "There is no one around."
+    private val singularEnumerationPostfix: String,
+    private val pluralEnumerationPostfix: String,
+    private val emptyDescription: String
 ) {
     private val indexedCharacters = characters.toMutableList()
     private val charactersByKey = characters.associateBy { it.key }.toMutableMap()
@@ -17,6 +18,22 @@ class CharacterStorage(
         this.game = game
         indexedCharacters.forEach { it.setup(game) }
     }
+
+    operator fun plus(character: Character) =
+        CharacterStorage(
+            indexedCharacters + character,
+            singularEnumerationPostfix,
+            pluralEnumerationPostfix,
+            emptyDescription
+        )
+
+    operator fun plus(characters: CharacterStorage) =
+        CharacterStorage(
+            indexedCharacters + characters.indexedCharacters,
+            singularEnumerationPostfix,
+            pluralEnumerationPostfix,
+            emptyDescription
+        )
 
     fun add(character: Character) {
         character.setup(game)

@@ -6,7 +6,7 @@ import tech.alephia.keep.delivery.InOut
 
 class ActionStorage(
     actions: List<Action> = listOf(),
-    private val emptyDescription: String = "There is nothing to do."
+    private val emptyDescription: String
 ) {
     private val indexedActions = actions.toMutableList()
     private val actionsByKey = actions.associateBy { it.key }.toMutableMap()
@@ -15,6 +15,12 @@ class ActionStorage(
     fun setup(game: Game) {
         this.io = game.io
     }
+
+    operator fun plus(action: Action) =
+        ActionStorage(indexedActions + action, emptyDescription)
+
+    operator fun plus(actions: ActionStorage) =
+        ActionStorage(indexedActions + actions.indexedActions, emptyDescription)
 
     fun add(action: Action) {
         actionsByKey[action.key] = action

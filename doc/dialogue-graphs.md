@@ -1,4 +1,4 @@
-# Keep Engine - Dialogue Graphs
+# Keep - Dialogue Graphs
 
 ## Simple Dialogues
 
@@ -14,7 +14,7 @@ val introduction = dialogues(
     )
 )
 
-val scene = Scene(key, title, narration, items, characters, dialogueGraphs(introdcution))
+val scene = scene(key, title, narration, items, characters, dialogueGraphs(introdcution))
 ```
 
 ## Multiple Lines

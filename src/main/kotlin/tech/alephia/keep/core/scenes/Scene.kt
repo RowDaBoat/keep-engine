@@ -16,15 +16,11 @@ class Scene(
     val key: String,
     val name: String,
     private val narration: String,
-    actions: List<Action>,
-    items: List<Item> = emptyList(),
-    characters: List<Character> = emptyList(),
+    private val actions: ActionStorage,
+    val items: ItemStorage,
+    val characters: CharacterStorage,
     private val dialogues: List<DialogueGraph> = emptyList()
 ) {
-    val items = ItemStorage(items)
-    val characters = CharacterStorage(characters)
-    val actions = ActionStorage(actions)
-
     private lateinit var io: InOut
     private lateinit var game: Game
 
