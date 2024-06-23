@@ -5,10 +5,10 @@ import tech.alephia.keep.core.scenes.Scene
 import tech.alephia.keep.delivery.InOut
 
 class Game(
-    val io: InOut,
     val mainCharacter: Character,
     scenes: List<Scene>,
-    startingScene: String
+    startingScene: String,
+    val io: InOut = InOut(),
 ) {
     private var scenes = createMap(scenes)
 

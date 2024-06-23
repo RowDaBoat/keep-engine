@@ -12,7 +12,6 @@ import tech.alephia.keep.core.storages.items
 import tech.alephia.keep.delivery.InOut
 
 fun main() {
-    val inOut = InOut()
     val mainCharacter = mainCharacter("player", "you")
 
     val items = items(
@@ -24,7 +23,7 @@ fun main() {
     val welcome = scene("hello-keep", "Hello Keep", "Keep is a text game engine.", actions, items)
 
     val scenes = listOf(welcome)
-    val game = Game(inOut, mainCharacter, scenes, "hello-keep")
+    val game = Game(mainCharacter, scenes, "hello-keep")
 
     game.start()
 

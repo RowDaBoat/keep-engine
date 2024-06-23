@@ -9,7 +9,6 @@ import tech.alephia.keep.core.storages.actions
 import tech.alephia.keep.delivery.InOut
 
 fun main() {
-    val inOut = InOut()
     val mainCharacter = mainCharacter("player", "you")
 
     val welcomeActions = actions(Goto("big-room", "Go to the big room."))
@@ -19,7 +18,7 @@ fun main() {
     val room = scene("big-room", "Big Room", "You are on a big room.", roomActions)
 
     val scenes = listOf(welcome, room)
-    val game = Game(inOut, mainCharacter, scenes, "hello-keep")
+    val game = Game(mainCharacter, scenes, "hello-keep")
 
     game.start()
 

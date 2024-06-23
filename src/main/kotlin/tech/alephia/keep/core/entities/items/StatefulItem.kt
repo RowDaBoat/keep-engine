@@ -1,5 +1,6 @@
 package tech.alephia.keep.core.entities.items
 
+import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.events.EventContext
 import tech.alephia.keep.core.events.OpenContext
 import tech.alephia.keep.core.events.Subscribable
@@ -9,11 +10,11 @@ class StatefulItem(
     initialState: String,
     states: List<ItemState>
 ): Item, Subscribable<Item> {
-    private lateinit var game: tech.alephia.keep.core.Game
+    private lateinit var game: Game
     private var statesByKey = states.associateBy { it.key }.toMap()
-    private var state : ItemState = statesByKey[initialState]!!
+    private var state : ItemState = statesByKey[initialState.also { println("ititit: $it") }]!!
 
-    override fun setup(game: tech.alephia.keep.core.Game) {
+    override fun setup(game: Game) {
         this.game = game;
         statesByKey.values.forEach { it.setup(this) }
         dispatch("on-enter")

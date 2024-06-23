@@ -12,3 +12,5 @@ fun scene(
     characters: CharacterStorage = characters(),
     dialogues: List<DialogueGraph> = emptyList()
 ) = Scene(key, name, narration, actions, items, characters, dialogues)
+
+fun scenes(vararg scenes: Scene) = scenes.toList()
