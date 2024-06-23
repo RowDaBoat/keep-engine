@@ -120,6 +120,6 @@ The **Keep Engine** can do much more things to help you design your text-based g
 
 - [Items with state](doc/items.md)
 - [Characters with state](doc/characters.md)
-- [Dialogue Trees](doc/dialogues.md)
+- [Dialogue Graphs](doc/dialogues.md)
 - [Custom Actions](doc/actions.md)
 - [Actions and Events](doc/events.md)

@@ -4,7 +4,7 @@ import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.dialogue.lines.DialogueLine
 import tech.alephia.keep.delivery.InOut
 
-class DialogueTree(dialogues: List<Dialogue>) {
+class DialogueGraph(dialogues: List<Dialogue>) {
     private val dialoguesByKey = dialogues.associateBy { it.key }.toMap()
     private val queue = mutableListOf<DialogueLine>()
     private var lastSpeaker: String = ""
@@ -38,4 +38,4 @@ class DialogueTree(dialogues: List<Dialogue>) {
     }
 }
 
-fun dialogueTree(vararg dialogues: Dialogue) = DialogueTree(dialogues.toList())
+fun dialogues(vararg dialogues: Dialogue) = DialogueGraph(dialogues.toList())

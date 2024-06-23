@@ -6,5 +6,5 @@ import tech.alephia.keep.core.scenes.actions
 
 val room = Scene(
     "room", "Room", "An empty room.",
-    actions(Goto("keep.lobby", "Go back"))
+    actions(Goto("keep-lobby", "Go back"))
 )

@@ -2,7 +2,7 @@ package tech.alephia.keep.core.scenes
 
 import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.actions.Action
-import tech.alephia.keep.core.dialogue.DialogueTree
+import tech.alephia.keep.core.dialogue.DialogueGraph
 import tech.alephia.keep.core.entities.Entity
 import tech.alephia.keep.core.entities.characters.Character
 import tech.alephia.keep.core.entities.items.Item
@@ -19,7 +19,7 @@ class Scene(
     actions: List<Action>,
     items: List<Item> = emptyList(),
     characters: List<Character> = emptyList(),
-    private val dialogues: List<DialogueTree> = emptyList()
+    private val dialogues: List<DialogueGraph> = emptyList()
 ) {
     val items = ItemStorage(items)
     val characters = CharacterStorage(characters)
