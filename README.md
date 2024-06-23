@@ -1,8 +1,23 @@
-# Keep Engine
+# Keep, a Text-based Game Engine
 
 [![Test and Publish](https://github.com/RowDaBoat/keep-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/RowDaBoat/keep-engine/actions/workflows/ci.yml)
 
-**Keep Engine** is a game engine for text based adventure games written in Kotlin. It features an easy to read and write domain specific language to design scenes, items, characters, actions, and state machines.
+**Keep** is a game engine for text based adventure games written in Kotlin. It features an easy to read and write domain specific language to design scenes, items, characters, actions, and state machines.
+
+## Index
+
+- Introduction
+  - [Setup](#setup)
+  - [Getting Started](#getting-started-with-a-simple-game)
+  - [Changing Scenes](#changing-scenes)
+  - [Adding Items](#adding-items)
+  - [Adding NPCs](#adding-npcs)
+- In Depth
+  - [Items](doc/items.md)
+  - [Characters](doc/characters.md)
+  - [Dialogue Graphs](doc/dialogue-graphs.md)
+  - [Actions and Events](doc/actions-and-events.md)
+
 
 ## Setup
 
@@ -33,7 +48,7 @@ Then create a main character, it requires a key (`"player"`) to identify it, and
 val mainCharacter = mainCharacter("player", "you")
 ```
 
-Then create a scene, it requires a key (`"hello-keep"`) to identify it, and a title name to display (`"Hello Keep""`), scenes usually also have a `narration` as third argument to provide context to the player. The last argument is very important, but we won't use it for now so we just use an empty action list using `actions()`.
+Then create a scene, it requires a key (`"hello-keep"`) to identify it, and a title name to display (`"Hello Keep"`), scenes usually also have a `narration` as third argument to provide context to the player. The last argument is very important, but we won't use it for now so we just use an empty action list using `actions()`.
 
 ```kotlin
 val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.", actions())
@@ -116,10 +131,4 @@ val scene = Scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
 
 ## Where to go from here
 
-The **Keep Engine** can do much more things to help you design your text-based game, such as:
-
-- [Items with state](doc/items.md)
-- [Characters with state](doc/characters.md)
-- [Dialogue Graphs](doc/dialogues.md)
-- [Custom Actions](doc/actions.md)
-- [Actions and Events](doc/events.md)
+The **Keep Engine** can do much more to help you design your text-based game, check the [index](#index) for more in depth documentation on items, characters, dialogue, actions, and events.

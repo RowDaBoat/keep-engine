@@ -1,6 +1,6 @@
 # Keep Engine - Items
 
-## Simple items
+## Simple Items
 
 The most simple items are declared using the `item` function with a `key` to identify it, a display `name`, and a `description`. Typically, a callback is registered using `onUse`, it will be called when the `Use` action is used on the item.
 
@@ -18,7 +18,7 @@ val potion =
     }
 ```
 
-## Stateful items
+## Stateful Items
 
 Items can hold state, allowing the world to react and be modified by the player's actions. Use an overload of the `item` function, and declare `key`, `initialState` and `states` parameters.
 

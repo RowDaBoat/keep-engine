@@ -1,6 +1,6 @@
 # Keep Engine - Characters
 
-## Simple characters
+## Simple Characters
 
 Simple characters are declared using the `npc` function with a `key` to identify them, a display `name`, and a `description`. Typically, a callback is registered using `onTalk`, it will be called when the `Talk` action is used on the character.
 

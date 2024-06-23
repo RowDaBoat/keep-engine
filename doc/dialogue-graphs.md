@@ -17,7 +17,7 @@ val introduction = dialogues(
 val scene = Scene(key, title, narration, items, characters, dialogueGraphs(introdcution))
 ```
 
-## Multiple lines
+## Multiple Lines
 
 A single interlocutor can say multiple lines:
 
@@ -32,7 +32,7 @@ dialogue(
 )
 ```
 
-## Callbacks on lines
+## Callbacks on Lines
 
 Dialogues can run callbacks when a line is shown:
 
@@ -47,7 +47,7 @@ val introduction = dialogues(
 )
 ```
 
-## Go to
+## Go To
 
 Dialogue flow can be reused and redirected using the `goto` function
 
@@ -70,7 +70,7 @@ val introduction = dialogues(
 )
 ```
 
-## Dialogue options
+## Dialogue Options
 
 A `dialogue` can branch by providing options to the player. Combine `opt between` and `option`s with `goto` allowing complex dialogues to be written:
 
