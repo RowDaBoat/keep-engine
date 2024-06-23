@@ -2,7 +2,7 @@
 
 [![Test and Publish](https://github.com/RowDaBoat/keep-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/RowDaBoat/keep-engine/actions/workflows/ci.yml)
 
-**Keep** is a game engine for text based adventure games written in Kotlin. It features an easy to read and write domain specific language to design scenes, items, characters, actions, and state machines.
+**Keep** is a game engine for text-based adventure games written in Kotlin. It features an easy to read and write domain specific language to design scenes, items, characters, actions, and state machines.
 
 ## Index
 
@@ -15,7 +15,7 @@
 
 ## Setup
 
-Add the JitPack to your repositories and `keep-keep` to your dependencies on your project's `build.gradle.kts`.
+Add JitPack to your repositories and `keep-engine` to your dependencies on your project's `build.gradle.kts`.
 
 ```kotlin
 repositories {

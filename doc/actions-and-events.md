@@ -2,13 +2,13 @@
 
 ## Predefined Actions
 
-In `Keep` actions are used to define the game's behavior when the player interacts with the scenes, the engine has some already defined basic actions:
+In `Keep` actions are used to define the game's behavior when the player interacts with the scenes, the engine has some predefined basic actions:
 
 - `Leave()`: leaves an item from the player's inventory on the scene.
 - `Take()`: takes an item from the scene and puts it into the player's inventory.
 - `Talk()`: talks to another character in the scene.
-- `Look()`: looks at an item on the room or in the player's inventory
-- `Goto(target, description)`: changes the current scene for `target` and shows as `description` in the actions menu.
+- `Look()`: looks at an item in the room or in the player's inventory
+- `Goto(target, description)`: changes the current scene for `target` and is displayed as `description` in the "actions" menu.
 
 ## Subscribing to Events
 
@@ -28,12 +28,12 @@ val potion =
     }
 ```
 
-There is a shorthand `on` method for each of the predefined action's events, each one is equivalent to calling `on(eventKey)` with the key corresponding to each event.
+There is a shorthand `on` method for each of the predefined actions' events, each one is equivalent to calling `on(eventKey)` with the key corresponding to each event.
 You can use `on(eventKey)` to subscribe to events from your own custom actions.
 
 ## Custom Actions
 
-To create an action with custom behavior you can just use the `action` function:
+To create an action with custom behavior, you can use the `action` function:
 
 ```kotlin
 
@@ -55,4 +55,4 @@ val safe = item("safe", "Safe", "A huge safe, what is inside it?")
     }
 ```
 
-You can also implement the `Action` interface if you need a more complex integration.
+You can also implement the `Action` interface if you need a more complex behavior.

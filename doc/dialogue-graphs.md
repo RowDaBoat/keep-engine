@@ -2,19 +2,19 @@
 
 ## Simple Dialogues
 
-A `DialogGraph` is declared using `dialogues` and `dialogue`. Declare a `dialogue` with a `key` to identify it and a few lines, then pass it to `Scene` using `dialogueGraphs` to register it:
+A `DialogGraph` is declared using `dialogues` and `dialogue`. Declare a `dialogue` with a `key` to identify it and a few lines. Then, pass it to a `Scene` using `dialogueGraphs` to register it:
 
 ```kotlin
 val introduction = dialogues(
     dialogue(
         "introduction",
-        "Bob" say "Keep dialogues are declarative and easy.",
+        "Bob" say "Keep dialogues are declarative and easy to use.",
         "Alice" say "Just using a few `say` lines is the simplest form.",
         "John" say "Alright, got it."
     )
 )
 
-val scene = scene(key, title, narration, items, characters, dialogueGraphs(introdcution))
+val scene = scene(key, title, narration, items, characters, dialogueGraphs(introduction))
 ```
 
 ## Multiple Lines
@@ -34,7 +34,7 @@ dialogue(
 
 ## Callbacks on Lines
 
-Dialogues can run callbacks when a line is shown:
+Dialogues can execute callbacks when a line is shown:
 
 ```kotlin
 val introduction = dialogues(
@@ -49,7 +49,7 @@ val introduction = dialogues(
 
 ## Go To
 
-Dialogue flow can be reused and redirected using the `goto` function
+A dialogue can be reused and redirected using the `goto` function:
 
 ```kotlin
 val introduction = dialogues(
@@ -72,7 +72,7 @@ val introduction = dialogues(
 
 ## Dialogue Options
 
-A `dialogue` can branch by providing options to the player. Combine `opt between` and `option`s with `goto` allowing complex dialogues to be written:
+A `dialogue` can branch by providing options to the player. Combine `opt between` and `option` with `goto`, allowing complex dialogues to be created:
 
 ```kotlin
 val bobDialogue = dialogues(

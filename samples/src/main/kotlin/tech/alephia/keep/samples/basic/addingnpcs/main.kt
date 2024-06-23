@@ -18,7 +18,7 @@ fun main() {
     val characters = characters(
         npc("bob", "Bob", "Bob, an NPC.")
             onTalk {
-                io.paragraph("${target.name}: Hello ${game.mainCharacter.name}!.")
+                io.paragraph("${target.name}: Hello, ${game.mainCharacter.name}!.")
                 io.promptContinue()
            }
         ,

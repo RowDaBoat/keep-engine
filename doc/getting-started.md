@@ -1,35 +1,43 @@
 # Keep - Getting Started
 
 ## Index
-- [Starting off with a simple game](#starting-off-with-a-simple-game)
+- [Getting Started with a simple game](#getting-Started-with-a-simple-game)
 - [Changing Scenes](#changing-scenes)
 - [Adding Items](#adding-items)
 - [Adding NPCs](#adding-npcs)
 
-## Starting off with a simple game
+## Getting Started with a simple game
 
 To create a `Game` you need at least:
 - A `Character` for your main character.
 - A `Scene` where the game starts.
 
-Create a main character, it requires a key (`"player"`) to identify it, and a name to display (`"you"`):
+Create a main character, it requires:
+- A key (`"player"`) to identify it.
+- A name to display (`"you"`).
+
 ```kotlin
 val mainCharacter = mainCharacter("player", "you")
 ```
 
-Then create a scene, it requires a key (`"hello-keep"`) to identify it, and a title to display (`"Hello Keep"`), scenes usually also have a `narration` as third argument to provide context to the player. The last argument is very important, but we won't use it for now so we just use `actions()`.
+Then, create a scene, it requires:
+- A key (`"hello-keep"`) to identify it.
+- A title to display (`"Hello Keep"`).
+- A `narration` to provide context to the player.
+
+The last argument is very important, but we won't use it for now, so we just use `actions()`.
 
 ```kotlin
 val scene = scene("hello-keep", "Hello Keep", "Keep is a text game engine.", actions())
 ```
 
-Next create a game using the previously declared objects. The last argument is the `key` of the initial scene.
+Next, create a game using the previously declared objects. The last argument is the `key` of the initial scene.
 
 ```kotlin
 val game = Game(mainCharacter, scenes(scene), "hello-keep")
 ```
 
-Finally, start and run the game:
+Finally, start and run the game with:
 
 ```kotlin
 game.start()
@@ -41,7 +49,7 @@ while (true) {
 
 ## Changing scenes
 
-Let's add a new `Scene` and actions to go back and forth between the two.
+Let's add a new `Scene`, and actions to change between them.
 
 ```kotlin
 
@@ -57,7 +65,7 @@ val game = Game(inOut, mainCharacter, scenes, "hello-keep")
 
 ## Adding items
 
-To add items to the scene, just declare them using `items` and `item`.
+To add items to the scene declare them using `items` and `item`.
 
 ```kotlin
 val items = items(
@@ -66,7 +74,7 @@ val items = items(
 )
 
 val actions = actions(Take(), Leave())
-val room = scene("big-room", "Big Room", "You are on a big room.", actions, items)
+val room = scene("big-room", "Big Room", "You are in a big room.", actions, items)
 ```
 
 ## Adding NPCs
@@ -81,7 +89,7 @@ val actions = actions(Talk())
 val characters = characters(
     npc("bob", "Bob", "Bob, an NPC.")
         onTalk {
-            io.paragraph("${target.name}: Hello ${game.mainCharacter.name}!.")
+            io.paragraph("${target.name}: Hello, ${game.mainCharacter.name}!.")
             io.promptContinue()
         }
     ,
@@ -99,4 +107,4 @@ val scene = scene("hello-keep", "Hello Keep", "Keep is a text game engine.",
 
 ## Where to go from here
 
-**Keep** can do much more to help you design your game, check the [index](../README.md#index) for in depth documentation on items, characters, dialogue, actions, and events.
+**Keep** can do much more to help you design your game, check the [index](../README.md#index) for in-depth documentation on items, characters, dialogue, actions, and events.

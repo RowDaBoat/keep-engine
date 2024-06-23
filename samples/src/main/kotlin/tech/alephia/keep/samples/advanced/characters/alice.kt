@@ -20,7 +20,7 @@ val alice =
         characterState(
             "regular",
             "Alice",
-            "Alice, another NPC.",
+            "Alice, another NPC, she has already greeted you.",
         ) onTalk {
             io.paragraph("${target.name}: Hello.")
             io.promptContinue()
