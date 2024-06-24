@@ -1,6 +1,7 @@
 package tech.alephia.keep.core.entities.characters
 
 import tech.alephia.keep.core.Game
+import tech.alephia.keep.core.events.EventContext
 import tech.alephia.keep.core.events.OpenContext
 import tech.alephia.keep.core.events.Subscribable
 import tech.alephia.keep.core.events.Subscriptions
@@ -21,6 +22,7 @@ class SimpleCharacter(
         this.game = game
         inventory.setup(game)
         statesByKey.values.forEach { it.setup(this) }
+        dispatch("on-enter")
     }
 
     override val name get() = state.name
@@ -38,10 +40,20 @@ class SimpleCharacter(
     }
 
     override fun publish(key: String, context: OpenContext) {
-        subscriber.publish(key, context.toEventContext(this))
+        val eventContext = context.toEventContext<Character>(this)
+
+        state.publish(key, eventContext)
+        subscriber.publish(key, eventContext)
     }
 
     private fun dispatch(key: String) {
-        state.publish(key, OpenContext(game.scene, game, game.io))
+        val eventContext = EventContext<Character>(
+            this,
+            null,
+            game.scene,
+            game,
+            game.io
+        )
+        state.publish(key, eventContext)
     }
 }

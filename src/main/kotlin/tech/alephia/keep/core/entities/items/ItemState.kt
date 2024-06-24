@@ -1,5 +1,7 @@
 package tech.alephia.keep.core.entities.items
 
+import tech.alephia.keep.core.entities.characters.Character
+import tech.alephia.keep.core.events.EventContext
 import tech.alephia.keep.core.events.OpenContext
 import tech.alephia.keep.core.events.Subscribable
 import tech.alephia.keep.core.events.Subscriptions
@@ -18,7 +20,7 @@ class ItemState(
         this.item = item
     }
 
-    fun publish(key: String, context: OpenContext) {
-        subscriber.publish(key, context.toEventContext(item))
+    fun publish(key: String, context: EventContext<Item>) {
+        subscriber.publish(key, context)
     }
 }

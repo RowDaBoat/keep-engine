@@ -1,8 +1,5 @@
 package tech.alephia.keep.core.entities.characters
 
-import tech.alephia.keep.core.entities.items.IndefiniteArticle
-import tech.alephia.keep.core.entities.items.ItemState
-import tech.alephia.keep.core.entities.items.defaultItemSubscriptions
 import tech.alephia.keep.core.events.Subscriptions
 import tech.alephia.keep.core.storages.ItemStorage
 import tech.alephia.keep.core.storages.items
@@ -12,9 +9,10 @@ fun mainCharacter(
     name: String,
     description: String = "",
     inventory: ItemStorage = mainCharacterInventory()
-) =
-    singleState(name, description)
-        .let { mainCharacter(key, it.key, inventory, it) }
+): Character {
+    val state = singleState(name, description)
+    return mainCharacter(key, state.key, inventory, state)
+}
 
 fun mainCharacter(
     key: String,
@@ -29,9 +27,10 @@ fun npc(
     name: String,
     description: String = "",
     inventory: ItemStorage = items()
-) =
-    singleState(name, description)
-        .let { npc(key, it.key, inventory, it) }
+): Character {
+    val state = singleState(name, description)
+    return npc(key, state.key, inventory, state)
+}
 
 
 fun npc(

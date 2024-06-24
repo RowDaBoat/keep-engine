@@ -1,5 +1,6 @@
 package tech.alephia.keep.core.entities.items
 
+import tech.alephia.keep.core.Game
 import tech.alephia.keep.core.events.OpenContext
 import tech.alephia.keep.core.events.Subscribable
 import tech.alephia.keep.core.events.Subscriptions
@@ -12,9 +13,9 @@ class SomeItem(
     override val canBeTaken: Boolean = false,
     private val subscriber: Subscriptions<Item>
 ) : Item, Subscribable<Item> by subscriber {
-    private lateinit var game: tech.alephia.keep.core.Game
+    private lateinit var game: Game
 
-    override fun setup(game: tech.alephia.keep.core.Game) {
+    override fun setup(game: Game) {
         this.game = game
     }
 

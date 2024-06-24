@@ -27,8 +27,9 @@ class Scene(
     fun setup(game: Game) {
         this.game = game
         io = game.io
-        items.setup(game)
         actions.setup(game)
+        items.setup(game)
+        characters.setup(game)
         dialogues.forEach { it.setup(game) }
     }
 
@@ -36,8 +37,8 @@ class Scene(
         io.apply {
             scene()
             var count = drawRoomItems()
-            count += drawInventoryItems(game, count)
-            count += drawCharacters(count)
+            count = drawInventoryItems(game, count)
+            drawCharacters(count)
             sceneActions()
             io.promptInput()
         }

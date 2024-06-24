@@ -1,7 +1,6 @@
 package tech.alephia.keep.core.storages
 
 import tech.alephia.keep.core.Game
-import tech.alephia.keep.core.actions.Action
 import tech.alephia.keep.core.entities.characters.Character
 
 class CharacterStorage(
@@ -57,7 +56,7 @@ class CharacterStorage(
         when {
             indexedCharacters.isEmpty() -> emptyDescription
             indexedCharacters.size == 1 -> showOneCharacter(base)
-            else -> showManyItems(base)
+            else -> showManyCharacters(base)
         }
 
     fun count() = indexedCharacters.count()
@@ -68,7 +67,7 @@ class CharacterStorage(
         return "${showIndexedCharacter(indexedCharacter, base)} $singularEnumerationPostfix."
     }
 
-    private fun showManyItems(base: Int): String {
+    private fun showManyCharacters(base: Int): String {
         val itemsWithIndices = indexedCharacters.withIndex()
         val withoutLast = itemsWithIndices.take(this.indexedCharacters.size - 1)
         val last = itemsWithIndices.last()
