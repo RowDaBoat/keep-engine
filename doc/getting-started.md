@@ -5,6 +5,7 @@
 - [Changing Scenes](#changing-scenes)
 - [Adding Items](#adding-items)
 - [Adding NPCs](#adding-npcs)
+- [Where to go from here](#where-to-go-from-here)
 
 ## Getting Started with a simple game
 

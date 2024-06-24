@@ -6,12 +6,11 @@
 
 ## Index
 
-- Introduction
-  - [Getting Started](doc/getting-started.md)
-  - [Items](doc/items.md)
-  - [Characters](doc/characters.md)
-  - [Dialogue Graphs](doc/dialogue-graphs.md)
-  - [Actions and Events](doc/actions-and-events.md)
+- [Getting Started](doc/getting-started.md)
+- [Items](doc/items.md)
+- [Characters](doc/characters.md)
+- [Dialogue Graphs](doc/dialogue-graphs.md)
+- [Actions and Events](doc/actions-and-events.md)
 
 ## Setup
 
@@ -62,3 +61,30 @@ fun main() {
     }
 }
 ```
+
+The game displays the following when run:
+```
+.------------.
+| Hello Keep |
+'------------'
+Keep is a text game engine.
+
+[ Room ]
+There is a Magic Potion[1].
+
+[ Inventory ]
+Your inventory is empty.
+
+[ Characters ]
+Bob[2] is here.
+
+[ Actions ]
+[1] Talk to someone
+[2] Use an item
+
+John> 
+```
+
+The player inputs an action number, and then a number for the target if necessary.
+
+ie: the input `1 2` talks[1] to bob[2], and `2 1` uses[2] the potion[1].

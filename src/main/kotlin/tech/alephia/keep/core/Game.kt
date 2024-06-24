@@ -23,6 +23,7 @@ class Game(
 
     fun draw() {
         scene.draw(this)
+        io.separator()
     }
 
     private fun createMap(scenes: List<Scene>) =

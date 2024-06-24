@@ -69,7 +69,6 @@ class Scene(
     }
 
     private fun InOut.scene() {
-        separator()
         title(name)
         paragraph(narration)
     }
