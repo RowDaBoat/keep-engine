@@ -18,11 +18,11 @@ Add JitPack to your repositories and `keep-engine` to your dependencies on your 
 
 ```kotlin
 repositories {
-    maven { url "https://jitpack.io" }
+    maven("https://jitpack.io")
 }
 
 dependencies {
-    implementation "com.github.RowDaBoat:keep-engine:1.0"
+    implementation("com.github.RowDaBoat", "keep-engine", "1.0-SNAPSHOT")
 }
 ```
 
