@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.RowDaBoat", "keep-engine", "1.0-SNAPSHOT")
+    implementation("com.github.RowDaBoat", "keep-engine", "0.0.1")
 }
 ```
 
