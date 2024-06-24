@@ -15,8 +15,8 @@ import tech.alephia.keep.delivery.*
 class Scene(
     val key: String,
     val name: String,
-    private val narration: String,
-    private val actions: ActionStorage,
+    val narration: String,
+    val actions: ActionStorage,
     val items: ItemStorage,
     val characters: CharacterStorage,
     private val dialogues: List<DialogueGraph> = emptyList()
